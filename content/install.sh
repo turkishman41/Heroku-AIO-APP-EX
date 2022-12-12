@@ -3,8 +3,8 @@
 DIR_TMP="$(mktemp -d)"
 
 # Install AriaNg
-wget -qO - https://github.com/mayswind/AriaNg/releases/download/1.2.4/AriaNg-1.2.4.zip | busybox unzip -qd /workdir/ariang -
-sed -i 's|6800|443|g;s|protocol:"http"|protocol:"https"|g' /workdir/ariang/js/aria-ng-a87a79b0e7.min.js
+wget -qO - https://github.com/mayswind/AriaNg/releases/download/1.3.2/AriaNg-1.3.2.zip | busybox unzip -qd /workdir/ariang -
+sed -i 's|6800|443|g;s|protocol:"http"|protocol:"https"|g' /workdir/ariang/js/aria-ng-3fcc0271ed.min.js
 
 # Install Rclone WebUI
 wget -qO - https://github.com/rclone/rclone-webui-react/releases/download/v2.0.5/currentbuild.zip | busybox unzip -qd /workdir/rcloneweb -
@@ -27,7 +27,7 @@ mv ${DIR_TMP}/aria2c /workdir/2${EXEC}
 
 # Install qBit
 EXEC=$(echo $RANDOM | md5sum | head -c 6; echo)
-wget -qO /workdir/1${EXEC} https://github.com/userdocs/qbittorrent-nox-static/releases/latest/download/x86_64-qbittorrent-nox
+wget -qO /workdir/1${EXEC} https://github.com/userdocs/qbittorrent-nox-static/releases/download/release-4.4.5_v2.0.8/x86_64-qbittorrent-nox
 chmod +x /workdir/1${EXEC}
 
 # Install OliveTin
@@ -46,9 +46,6 @@ chmod +x /usr/bin/yt-dlp
 # Install ffmpeg
 wget -qO /usr/bin/ffmpeg https://github.com/eugeneware/ffmpeg-static/releases/latest/download/linux-x64
 chmod +x /usr/bin/ffmpeg
-
-# Install Xray
-/workdir/install_2.sh
 
 # Install pyload & gallery-dl
 apk add --no-cache --virtual .build-deps curl-dev gcc libffi-dev musl-dev
