@@ -7,10 +7,12 @@ LOCAL_PATH="$1"
 source /workdir/script_core.sh
 
 DEFINITION_PATH() {
-    UPLOAD_MODE="$(grep ^gallery-dl-upload-mode /mnt/data/config/script.conf | cut -d= -f2-)"
+    UPLOAD_MODE="$(grep ^gallery-dl-upload-mode /mnt/data/config/script.conf | cut -d= -f2- | sed "s|^[ \t]*||g;s|\r$||")"
     DOWNLOAD_DIR="$(jq '."base-directory"' /mnt/data/config/gallery-dl.conf | sed 's/\"//g;s/\r$//')"
-    GDL_DRIVE_DIR="$(grep ^gdl-drive-dir /mnt/data/config/script.conf | cut -d= -f2-)"
+    GDL_DRIVE_DIR="$(grep ^gdl-drive-dir /mnt/data/config/script.conf | cut -d= -f2- | sed "s|^[ \t]*||g;s|\r$||")"
     BASE_PATH="${LOCAL_PATH#"${DOWNLOAD_DIR%/}"}"
+    MSG_PATH="${LOCAL_PATH}"
+    FOLDER_NAME="${BASE_PATH}"
     if [[ "${GDL_DRIVE_DIR}" =~ :/ ]]; then
         REMOTE_PATH="${GDL_DRIVE_DIR}${BASE_PATH}"
     else
@@ -25,8 +27,10 @@ DEFINITION_PATH() {
 
 UPLOAD_TASK() {
     if [ "${UPLOAD_MODE}" = "disable" ]; then
+        SEND_TG_FINISHED
         echo "$(DATE_TIME) [INFO] Auto-upload to Rclone remote disabled"
     else
+        SEND_TG_FINISHED_TO_RCLONE
         UPLOAD_FOLDER
     fi
     if [ "${JOB_ID}" = "" ]; then
@@ -36,5 +40,6 @@ UPLOAD_TASK() {
 
 GET_PATH
 DEFINITION_PATH
+SEND_TG_FINISHED
 UPLOAD_TASK
 CLEAN_EMPTY_DIR

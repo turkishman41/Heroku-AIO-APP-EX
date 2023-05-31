@@ -1,7 +1,11 @@
+## Colab 已经封禁此项目，部署会导致 google 账户无法使用 Colab，暂停维护。
+
+
 ## 注意
 
  1. **请勿滥用，Colab账号封禁风险自负。**
  2. Aria2和qBittorrent配置文件默认限速5MB/s。
+ 3. 无法通过Rclone Web前端建立需要网页认证的存储配置。需要自行在其他设备上准备好rclone.conf文件。
 
 [概述](#概述)
 
@@ -43,9 +47,13 @@
     dlpr：使用yt-dlp下载视频到videos文件夹下，下载完成后发送任务到rclone。 
     gdlr：使用gallery-dl下载文件到gallery_dl_downloads文件夹下，下载完成后发送任务到rclone。  
 
+- 如果升级版本后在script.conf文件中没有找到相关新增功能设置，参考最新版 [script.conf](https://github.com/wy580477/Leech-AIO-APP-EX/blob/Colab/content/script.conf) 文件，自行添加缺失的设置选项。
+
 ### 更多用法和注意事项
 
- 1. pyLoad已知Bug：
-    - 登陆后重定向到http，解决方法：关闭当前pyLoad页面，重新打开。
+ 1. Telegram通知功能，需要在Telegram内与@BotFather对话注册bot。然后获取自己账户的ChatID或者bot加入的频道ChatID。具体详细步骤请Google。
+ 
+    然后编辑config/script.conf文件，将botid:token和ChatID填入对应选项，通知功能即生效。
+
+ 2. pyLoad已知Bug：
     - 解压后不能删除原文件，解决方法：Settings--Plugins--ExtractArchive，将"Move to trash instead delete"项设置为off。
- 2. 无法通过Rclone Web前端建立需要网页认证的存储配置。

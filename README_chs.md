@@ -2,7 +2,7 @@
 
 - 所有可以登陆此APP的用户可以访问/修改此APP以及Rclone远程存储的所有数据，不要存放敏感数据，不要与他人共享使用。
 
-本项目集成了yt-dlp、Aria2、pyLoad下载管理器、Rclone联动自动上传功能以及它们的WebUI和更多Web应用。
+本项目集成了yt-dlp、Aria2、gallery-dl、qBittorrent、pyLoad下载管理器、Rclone联动自动上传功能、Telegram任务完成通知以及它们的WebUI和更多Web应用。
 
 ## [Docker 部署](docs/README_docker_chs.md)
 
@@ -13,8 +13,7 @@
 
 </details>
 
-
-## [Colab 部署](docs/README_colab_chs.md)
+<!---## [Colab 部署](docs/README_colab_chs.md)
 
 <details>
 <summary>截图</summary>
@@ -22,13 +21,24 @@
 ![avatar](screenshots/colab_chs.jpeg)
 
 </details>
+-->
+## [Heroku 部署](docs/README_heroku_chs.md)
 
-## [~~Heroku 部署~~ Heroku将于2022年11月关闭免费服务](docs/README_heroku_chs.md)
+Heroku已于2022年11月关闭免费服务
 
 <details>
 <summary>截图</summary>
 
 ![avatar](screenshots/heroku_chs.jpeg)
+
+</details>
+
+## [Doprax 部署](docs/README_doprax_chs.md)
+
+<details>
+<summary>截图</summary>
+
+![avatar](screenshots/doprax_chs.jpeg)
 
 </details>
 

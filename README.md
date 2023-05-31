@@ -3,7 +3,7 @@
 ## Attention
  - Anyone who can login into this app has full access to data in this app and Rclone remotes. Do not share with other ppl, and do not store sensitive information with this app.
 
-This project integrates yt-dlp, Aria2, qBittorrent, pyLoad Download Manager, rclone auto-upload and their WebUI plus other Web Apps into a single package which is easy to deploy.
+This project integrates yt-dlp, Aria2, gallery-dl, qBittorrent, pyLoad Download Manager, rclone auto-upload, Telegram notification and their WebUI plus other Web Apps into a single package which is easy to deploy.
 
 ## [Docker Deployment](docs/README_docker.md)
 
@@ -14,8 +14,7 @@ This project integrates yt-dlp, Aria2, qBittorrent, pyLoad Download Manager, rcl
 
 </details>
 
-
-## [Colab Deployment](docs/README_colab.md)
+<!---## [Colab Deployment](docs/README_colab.md)
 
 <details>
 <summary>Screenshot</summary>
@@ -23,13 +22,24 @@ This project integrates yt-dlp, Aria2, qBittorrent, pyLoad Download Manager, rcl
 ![avatar](screenshots/colab.jpeg)
 
 </details>
+-->
+## [Heroku Deployment](docs/README_heroku.md)
 
-## [~~Heroku Deployment~~ Heroku will stop offering free product plans and shut down free dynos starting Nov. 28, 2022.](docs/README_heroku.md)
+Heroku stopped offering free product plans and shut down free dynos starting Nov. 28, 2022.
 
 <details>
 <summary>Screenshot</summary>
 
 ![avatar](screenshots/heroku.jpeg)
+
+</details>
+
+## [Doprax Deployment](docs/README_doprax.md)
+
+<details>
+<summary>Screenshot</summary>
+
+![avatar](screenshots/doprax.jpeg)
 
 </details>
 
